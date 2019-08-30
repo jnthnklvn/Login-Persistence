@@ -118,7 +118,7 @@ The login button calls login at the LoginBloc. The login at LoginBloc request th
   }
 ```
 
-At the leave button we add null to the sink of user from AppBloc. This makes the login fields and button appear again.
+At the leave button we add null to the user's sink from AppBloc. This makes the login fields and button appear again.
 ```
 onPressed: () => bloc.inUser.add(null),
 ```
