@@ -1,6 +1,6 @@
 # Login Persistence
 
-An example of Login with BLoC using SharedPreferences to persit and Slidy to structure the project.
+An example of Login with BLoC using SharedPreferences to persist and Slidy to structure the project.
 
 ![](20190830_144445.gif)
 
