@@ -72,7 +72,7 @@ body: Material(
   builder: (context, snapshot) {
 ```
 
-We also have a Column with the content to display. We always will show the logo as the first element after we make a condition, if the snapshot (from the user's stream) doesn't have data we show the fields and button to login, otherwise we show the "login again" and leave buttons.
+We also have a Column with the content to display. We always will show the logo as the first element after we make a condition, if the snapshot (from the user's stream) doesn't have data we show the fields and button to login, otherwise we show the "login again" and "leave" buttons.
 
 ```
 child: Column(
@@ -118,7 +118,7 @@ The login button calls login at the LoginBloc. The login at LoginBloc request th
   }
 ```
 
-At the leave button we add null to the user's sink from AppBloc. This makes the login fields and button appear again.
+At the "leave" button we add null to the user's sink from AppBloc. This makes the login fields and button appear again.
 ```
 onPressed: () => bloc.inUser.add(null),
 ```
