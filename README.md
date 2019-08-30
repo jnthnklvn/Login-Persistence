@@ -17,7 +17,7 @@ Using BLoC Pattern when the app starts the AppBloc starts with him. And here's t
 
 At the AppBloc is every logical code to manage the SharedPreferences.
 
-We start defining a controller for de user. We also define de sink(to change the user), stream(to listen the changes) and a get for the user as follow below:
+We start defining a controller for de user. We also define functions to return sink(to change the user), stream(to listen the changes) and value of the userController as follow below:
 ```
   final _userController = BehaviorSubject<UserModel>();
 
@@ -26,7 +26,7 @@ We start defining a controller for de user. We also define de sink(to change the
   UserModel get getUser => _userController.value;
 ```
 
-The constructor set the fuction to be listen and calls initBloc
+The constructor sets the fuction to be listen and calls initBloc
 ```
   AppBloc() {
     _userController.listen(onData);
