@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
           'Login',
         ),
         centerTitle: true,
-        backgroundColor: Color(0xff036b80),
+        backgroundColor: Color(0xff0497b5),
       ),
       body: Material(
         child: StreamBuilder<Object>(
@@ -62,29 +62,34 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  SizedBox entrarNovButton(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: RaisedButton(
-        onPressed: () => Navigator.pushReplacementNamed(context, '/noticias'),
-        child: Text('LOGIN AGAIN'),
-        textColor: Colors.white,
-        color: Color(0xff036b80),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
+  Widget entrarNovButton(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 50, left: 20, right: 20),
+      child: SizedBox(
+        width: double.infinity,
+        child: RaisedButton(
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (_) => HomeModule())),
+          child: Text('LOGIN AGAIN'),
+          textColor: Colors.white,
+          color: Color(0xff0497b5),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+          ),
         ),
       ),
     );
   }
 
-  SizedBox sairButton(BuildContext context, AppBloc bloc) {
-    return SizedBox(
+  Widget sairButton(BuildContext context, AppBloc bloc) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20),
       width: double.infinity,
       child: OutlineButton(
         onPressed: () => bloc.inUser.add(null),
         child: Text('CLOSE SESSION'),
-        textColor: Color(0xff036b80),
-        borderSide: BorderSide(color: Color(0xff036b80), width: 1),
+        textColor: Color(0xff0497b5),
+        borderSide: BorderSide(color: Color(0xff0497b5), width: 1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
         ),
@@ -100,7 +105,7 @@ class LoginPage extends StatelessWidget {
           onChanged: bloc.changeUsername,
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
-            fillColor: Color(0xff27d3f5).withOpacity(0.1),
+            fillColor: Colors.grey[100],
             filled: true,
             labelText: 'Username',
             errorText: snapshot.error,
@@ -118,7 +123,7 @@ class LoginPage extends StatelessWidget {
           obscureText: true,
           onChanged: bloc.changePassword,
           decoration: InputDecoration(
-            fillColor: Color(0xff27d3f5).withOpacity(0.1),
+            fillColor: Colors.grey[100],
             filled: true,
             labelText: 'Password',
             errorText: snapshot.error,
@@ -150,7 +155,7 @@ class LoginPage extends StatelessWidget {
                     "LOGIN",
                   ),
                   textColor: Colors.white,
-                  color: Color(0xff036b80),
+                  color: Color(0xff0497b5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                   ),
@@ -158,7 +163,7 @@ class LoginPage extends StatelessWidget {
                     if (snapshot.hasData) {
                       String result = await bloc.submit();
                       if (result.contains("true")) {
-                        Navigator.pushReplacement(context,
+                        Navigator.push(context,
                             MaterialPageRoute(builder: (_) => HomeModule()));
                       } else {
                         showDialog(
