@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_persistence/src/home/home_module.dart';
+import 'package:login_persistence/src/login/login_module.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -9,7 +9,8 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeModule(),
+      debugShowCheckedModeBanner: false,
+      home: LoginModule(),
     );
   }
 }
